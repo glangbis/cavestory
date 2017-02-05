@@ -104,5 +104,8 @@
     <ClInclude Include="hud.h">
       <Filter>Source Files\headers</Filter>
     </ClInclude>
+    <ClInclude Include="door.h">
+      <Filter>Source Files\headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

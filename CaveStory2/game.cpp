@@ -24,7 +24,7 @@ void Game::gameLoop() {
 	SDL_Event event;
 
 
-	this->_level = Level("map1", Vector2(100, 100), graphics);
+	this->_level = Level("map1", graphics);
 	this->_player = Player(graphics, this->_level.getPlayerSpawnPoint());
 	this->_hud = HUD(graphics, this->_player);
 
@@ -86,6 +86,8 @@ void Game::gameLoop() {
 
 		const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
+
+		this->_graphics = graphics;
 		this->update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 
@@ -109,6 +111,7 @@ void Game::update(float elapsedTime) {
 	this->_level.update(elapsedTime);
 	this->_hud.update(elapsedTime);
 
+
 	//check collisions
 	std::vector<Rectangle> others;
 	if ((others = this->_level.checkTileCollisions(this->_player.getBoundingBox())).size() > 0) {
@@ -120,5 +123,11 @@ void Game::update(float elapsedTime) {
 	std::vector<Slope> otherSlopes;
 	if ((otherSlopes = this->_level.checkSlopeCollisions(this->_player.getBoundingBox())).size() > 0) {
 		this->_player.handleSlopeCollisions(otherSlopes);
+	}
+
+	//Check doors
+	std::vector<Door> otherDoors;
+	if ((otherDoors = this->_level.checkDoorCollisions(this->_player.getBoundingBox())).size() > 0) {
+		this->_player.handleDoorCollision(otherDoors, this->_level, this->_graphics);
 	}
 }

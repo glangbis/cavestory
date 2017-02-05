@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="38">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="42">
  <tileset firstgid="1" name="prTCave" tilewidth="16" tileheight="16" tilecount="80" columns="16">
   <image source="content/tilesets/PrtCave.png" width="256" height="80"/>
  </tileset>
@@ -180,7 +180,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="17"/>
+   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="50"/>
    <tile gid="49"/>
@@ -199,8 +199,8 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="34"/>
    <tile gid="33"/>
@@ -523,8 +523,8 @@
    <tile gid="99"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="43"/>
+   <tile gid="43"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -674,13 +674,12 @@
  </layer>
  <objectgroup name="collisions">
   <object id="4" x="144.667" y="64.6667" width="15.3333" height="15"/>
-  <object id="5" x="112.333" y="80" width="79.3333" height="15"/>
-  <object id="6" x="224.667" y="80.6667" width="31" height="14.3333"/>
-  <object id="7" x="208.667" y="128.333" width="31" height="15"/>
-  <object id="9" x="128.813" y="144.333" width="46.339" height="15"/>
-  <object id="10" x="96.7188" y="144.333" width="14.6667" height="15.3333"/>
-  <object id="16" x="64.6667" y="145" width="14.145" height="14"/>
-  <object id="17" x="64.6667" y="80.3333" width="15.3333" height="14.6667"/>
+  <object id="5" x="115" y="80" width="74.6666" height="15"/>
+  <object id="6" x="226.334" y="80.6667" width="29.3333" height="14.3333"/>
+  <object id="9" x="131.146" y="144.333" width="41.339" height="15"/>
+  <object id="10" x="98.3855" y="144.333" width="11" height="15.3333"/>
+  <object id="16" x="64.6667" y="145" width="11.8117" height="14"/>
+  <object id="17" x="64.6667" y="80.3333" width="12.3333" height="14.6667"/>
   <object id="18" x="38" y="47" width="26.6667" height="129.333"/>
   <object id="19" x="57.6666" y="6.99997" width="55" height="25.3333"/>
   <object id="20" x="113.667" y="9.66667" width="46.3333" height="22"/>
@@ -689,9 +688,10 @@
   <object id="24" x="256" y="38.6667" width="44" height="142.333"/>
   <object id="25" x="224.333" y="182.334" width="31.3333" height="29.3333"/>
   <object id="27" x="54" y="183.667" width="170.333" height="26.6667"/>
+  <object id="38" x="210.667" y="129" width="26.6667" height="14"/>
  </objectgroup>
  <objectgroup color="#00aa00" name="spawn points">
-  <object id="32" name="player" x="145.334" y="42.333" width="10" height="9">
+  <object id="32" name="player" x="67.834" y="116.833" width="10" height="9">
    <ellipse/>
   </object>
  </objectgroup>
@@ -702,8 +702,15 @@
   <object id="36" x="86" y="182.5">
    <polyline points="0,0 -20,-8.5"/>
   </object>
-  <object id="37" x="161" y="65.5">
-   <polyline points="0,0 29.5,14"/>
+  <object id="37" x="158.898" y="65.75">
+   <polyline points="0,0 30.2083,16.4167"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="doors">
+  <object id="39" x="143.667" y="38.3333" width="16.3333" height="25.3333">
+   <properties>
+    <property name="destination" value="map2"/>
+   </properties>
   </object>
  </objectgroup>
 </map>

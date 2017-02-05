@@ -6,7 +6,7 @@ namespace player_constants {
 	const float WALK_SPEED = 0.2f;
 	const float GRAVITY = 0.002f;
 	const float GRAVITY_CAP = 0.8f;
-	const float JUMP_SPEED = 0.7f;
+	const float JUMP_SPEED = 0.65f;
 }
 
 
@@ -177,6 +177,22 @@ void Player::handleSlopeCollisions(std::vector<Slope> &others) {
 		}
 	}
 }
+
+void Player::handleDoorCollision(std::vector<Door> &others, Level &level, Graphics &graphics) {
+	//Check if the player is grounded and holding the down arrow
+	//If so, go through the door
+	//If not, do nothing
+	for (int i = 0; i < others.size(); i++) {
+		if (this->_grounded == true && this->_lookingDown == true) {
+			level = Level(others.at(i).getDestination(), graphics);
+			this->_x = level.getPlayerSpawnPoint().x;
+			this->_y = level.getPlayerSpawnPoint().y;
+		}
+	}
+}
+
+
+
 void Player::update(float elapsedTime) {
 	//apply gravity
 	if (this->_dy <= player_constants::GRAVITY_CAP) {
