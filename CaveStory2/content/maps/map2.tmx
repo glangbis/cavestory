@@ -660,8 +660,8 @@
    <tile gid="33"/>
   </data>
  </layer>
- <objectgroup name="spawn points">
-  <object id="1" name="player" x="119.741" y="161.982" width="3.32613" height="3.65874">
+ <objectgroup color="#00aa00" name="spawn points">
+  <object id="1" name="player" x="211.241" y="115.482" width="3.32613" height="3.65874">
    <ellipse/>
   </object>
  </objectgroup>
@@ -708,7 +708,7 @@
   </object>
  </objectgroup>
  <objectgroup name="doors">
-  <object id="51" x="109.5" y="140.5" width="24.5" height="35">
+  <object id="51" x="108" y="140.5" width="24.5" height="35">
    <properties>
     <property name="destination" value="map1"/>
    </properties>

@@ -20,6 +20,7 @@ public:
 
 private:
 	std::string _destination;
+	
 };
 
 
