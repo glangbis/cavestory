@@ -78,6 +78,10 @@ void Game::gameLoop() {
 			this->_player.jump();
 		}
 
+		if (input.wasKeyPressed(SDL_SCANCODE_X) == true) {
+			this->_player.dash();
+		}
+
 
 		else if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
 			this->_player.stopMoving();
@@ -129,5 +133,10 @@ void Game::update(float elapsedTime) {
 	std::vector<Door> otherDoors;
 	if ((otherDoors = this->_level.checkDoorCollisions(this->_player.getBoundingBox())).size() > 0) {
 		this->_player.handleDoorCollision(otherDoors, this->_level, this->_graphics);
+	}
+
+	//check if falling below map
+	if ((this->_player.getY()) > globals::SCREEN_HEIGHT) {
+		this->_player.handleBelowMap(this->_level);
 	}
 }

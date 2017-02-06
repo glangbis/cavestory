@@ -1,12 +1,12 @@
 #include "player.h"
 #include "graphics.h"
-//test
 
 namespace player_constants {
 	const float WALK_SPEED = 0.2f;
 	const float GRAVITY = 0.002f;
 	const float GRAVITY_CAP = 0.8f;
 	const float JUMP_SPEED = 0.65f;
+	const float DASH_DISTANCE = 100;
 }
 
 
@@ -122,7 +122,15 @@ void Player::jump() {
 	}
 }
 
+void Player::dash() {
+	if (this->_facing == RIGHT) {
+		this->_x += player_constants::DASH_DISTANCE;
+	}
 
+	if (this->_facing == LEFT) {
+		this->_x -= player_constants::DASH_DISTANCE;
+	}
+}
 
 
 //handle collision with all tiles player is colliding with
@@ -192,6 +200,11 @@ void Player::handleDoorCollision(std::vector<Door> &others, Level &level, Graphi
 }
 
 
+void Player::handleBelowMap(Level &level) {
+	this->_x = level.getPlayerSpawnPoint().x;
+	this->_y = level.getPlayerSpawnPoint().y;
+}
+
 
 void Player::update(float elapsedTime) {
 	//apply gravity
@@ -202,8 +215,9 @@ void Player::update(float elapsedTime) {
 
 	//move by dx
 	this->_x += this->_dx * elapsedTime;
-	//move by dyz
+	//move by dy
 	this->_y += this->_dy * elapsedTime;
+
 
 	AnimatedSprite::update(elapsedTime);
 

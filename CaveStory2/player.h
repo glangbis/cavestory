@@ -34,6 +34,9 @@ public:
 	//jump
 	void jump();
 
+	//dash
+	void dash();
+
 
 
 
@@ -43,6 +46,7 @@ public:
 	void handleTileCollisions(std::vector<Rectangle> &others);
 	void handleSlopeCollisions(std::vector<Slope> &others);
 	void handleDoorCollision(std::vector<Door> &others, Level &level, Graphics &graphics);
+	void handleBelowMap(Level &level);
 
 	const float getX() const;
 	const float getY() const;
@@ -62,6 +66,7 @@ private:
 
 	int _maxHealth;
 	int _currentHealth;
+
 };
 
 #endif

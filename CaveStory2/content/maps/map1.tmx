@@ -691,7 +691,7 @@
   <object id="38" x="210.667" y="129" width="26.6667" height="14"/>
  </objectgroup>
  <objectgroup color="#00aa00" name="spawn points">
-  <object id="32" name="player" x="67.834" y="116.833" width="10" height="9">
+  <object id="32" name="player" x="122.834" y="60.833" width="10" height="9">
    <ellipse/>
   </object>
  </objectgroup>
@@ -707,9 +707,9 @@
   </object>
  </objectgroup>
  <objectgroup name="doors">
-  <object id="39" x="143.667" y="38.3333" width="16.3333" height="25.3333">
+  <object id="39" x="144.167" y="39.3333" width="16.3333" height="25.3333">
    <properties>
-    <property name="destination" value="map2"/>
+    <property name="destination" value="map3"/>
    </properties>
   </object>
  </objectgroup>
