@@ -62,10 +62,10 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 			std::stringstream ss;
 			ss << source;
 			ss >> testSS;
-			std::cout << testSS << std::endl;
+			//std::cout << testSS << std::endl;
 			testSS.erase(0, 2);
 			testSS = "content/" + testSS;
-			std::cout << testSS << std::endl;
+			//std::cout << testSS << std::endl;
 			pTileset->QueryIntAttribute("firstgid", &firstgid);
 			SDL_Texture* tex = SDL_CreateTextureFromSurface(graphics.getRenderer(), graphics.loadImage(testSS));//loadImage(ss.str()));
 			this->_tilesets.push_back(Tileset(tex, firstgid));
@@ -156,9 +156,11 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 							xx = tileCounter % width;
 							xx *= tileWidth;
 							yy += tileHeight * (tileCounter / width);
+							std::cout << xx << "   " << yy << "   ";
 							Vector2 finalTilePosition = Vector2(xx, yy);
 
 							//Calculate the position of the tile in the tileset
+							std::cout << gid << "  ";
 							Vector2 finalTilesetPosition = this->getTilesetPosition(tls, gid, tileWidth, tileHeight);
 
 							//Build the actual tile and add it to the level's tile list
@@ -382,7 +384,7 @@ const Vector2 Level::getPlayerSpawnPoint() const {
 Vector2 Level::getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileHeight) {
 	int tilesetWidth, tilesetHeight;
 	SDL_QueryTexture(tls.Texture, NULL, NULL, &tilesetWidth, &tilesetHeight);
-	int tsxx = gid % (tilesetWidth / tileWidth) - 1;
+	int tsxx = (gid - 1) % (tilesetWidth / tileWidth) ;
 	tsxx *= tileWidth;
 	int tsyy = 0;
 	int amt = ((gid - tls.FirstGid) / (tilesetWidth / tileWidth));
