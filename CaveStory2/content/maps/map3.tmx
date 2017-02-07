@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="45">
- <tileset firstgid="1" name="NpcSym" tilewidth="16" tileheight="16" tilecount="300" columns="20">
-  <image source="content/tilesets/NpcSym.png" width="320" height="240"/>
-  <tile id="18">
-   <animation>
-    <frame tileid="18" duration="10"/>
-    <frame tileid="19" duration="10"/>
-   </animation>
-  </tile>
-  <tile id="26">
-   <animation>
-    <frame tileid="26" duration="100"/>
-    <frame tileid="27" duration="100"/>
-    <frame tileid="28" duration="100"/>
-    <frame tileid="29" duration="100"/>
-    <frame tileid="30" duration="100"/>
-    <frame tileid="31" duration="100"/>
-    <frame tileid="32" duration="100"/>
-    <frame tileid="33" duration="100"/>
-   </animation>
-  </tile>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="46">
+ <tileset firstgid="1" name="npc" tilewidth="16" tileheight="16" tilecount="300" columns="20">
+  <image source="../tilesets/NpcSym.png" width="320" height="240"/>
  </tileset>
- <tileset firstgid="301" name="test" tilewidth="16" tileheight="16" tilecount="112" columns="16">
-  <image source="content/tilesets/PrtSand.png" width="256" height="112"/>
+ <tileset firstgid="301" name="grass" tilewidth="16" tileheight="16" tilecount="128" columns="16">
+  <image source="../tilesets/PrtWeed.png" width="256" height="128"/>
+ </tileset>
+ <tileset firstgid="429" name="prtcave" tilewidth="16" tileheight="16" tilecount="80" columns="16">
+  <image source="../tilesets/PrtCave.png" width="256" height="80"/>
  </tileset>
  <layer name="background" width="20" height="16">
   <data>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="395"/>
-   <tile gid="412"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -41,17 +20,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="393"/>
-   <tile gid="352"/>
-   <tile gid="393"/>
-   <tile gid="412"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -65,8 +33,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -85,8 +51,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -105,8 +69,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -125,8 +87,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -145,8 +105,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -165,11 +123,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
-   <tile gid="27"/>
-   <tile gid="19"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -185,11 +139,22 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="317"/>
    <tile gid="318"/>
-   <tile gid="318"/>
+   <tile gid="319"/>
+   <tile gid="320"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -205,11 +170,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
-   <tile gid="337"/>
-   <tile gid="337"/>
+   <tile gid="333"/>
+   <tile gid="334"/>
+   <tile gid="335"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -218,6 +182,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="467"/>
+   <tile gid="468"/>
+   <tile gid="468"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -225,11 +192,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
-   <tile gid="314"/>
-   <tile gid="315"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -239,17 +202,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="483"/>
+   <tile gid="484"/>
+   <tile gid="485"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
    <tile gid="0"/>
-   <tile gid="330"/>
-   <tile gid="331"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -265,11 +227,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="412"/>
-   <tile gid="314"/>
-   <tile gid="315"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -285,11 +242,39 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="318"/>
-   <tile gid="318"/>
-   <tile gid="330"/>
-   <tile gid="331"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -305,14 +290,14 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="301"/>
-   <tile gid="366"/>
-   <tile gid="366"/>
-   <tile gid="365"/>
-   <tile gid="366"/>
-   <tile gid="366"/>
-   <tile gid="366"/>
-   <tile gid="365"/>
+   <tile gid="0"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
+   <tile gid="170"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -323,29 +308,29 @@
    <tile gid="167"/>
    <tile gid="168"/>
    <tile gid="0"/>
-   <tile gid="410"/>
-   <tile gid="301"/>
-   <tile gid="301"/>
-   <tile gid="395"/>
-   <tile gid="395"/>
-   <tile gid="412"/>
-   <tile gid="395"/>
-   <tile gid="318"/>
-   <tile gid="395"/>
-   <tile gid="412"/>
-   <tile gid="395"/>
-   <tile gid="318"/>
-   <tile gid="395"/>
-   <tile gid="395"/>
-   <tile gid="395"/>
-   <tile gid="412"/>
-   <tile gid="412"/>
-   <tile gid="412"/>
-   <tile gid="395"/>
-   <tile gid="412"/>
-   <tile gid="412"/>
-   <tile gid="318"/>
-   <tile gid="301"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="190"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
   </data>
  </layer>
  <layer name="Tile Layer 1" width="20" height="16">
@@ -675,6 +660,7 @@
  <objectgroup name="collisions">
   <object id="42" x="2" y="224.5" width="110" height="31"/>
   <object id="43" x="113" y="241.5" width="191.5" height="13"/>
+  <object id="45" x="112.5" y="80" width="30.5" height="31.5"/>
  </objectgroup>
  <objectgroup color="#00aa00" name="spawn points">
   <object id="32" name="player" x="122.834" y="60.833" width="10" height="9">

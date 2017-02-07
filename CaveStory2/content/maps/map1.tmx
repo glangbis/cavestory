@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="16" tileheight="16" nextobjectid="42">
  <tileset firstgid="1" name="prTCave" tilewidth="16" tileheight="16" tilecount="80" columns="16">
-  <image source="content/tilesets/PrtCave.png" width="256" height="80"/>
+  <image source="../tilesets/PrtCave.png" width="256" height="80"/>
  </tileset>
  <tileset firstgid="81" name="NpcSym" tilewidth="16" tileheight="16" tilecount="300" columns="20">
-  <image source="content/tilesets/NpcSym.png" width="320" height="240"/>
+  <image source="../tilesets/NpcSym.png" width="320" height="240"/>
   <tile id="18">
    <animation>
     <frame tileid="18" duration="10"/>
@@ -92,7 +92,7 @@
    <tile gid="49"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="68"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="27"/>
@@ -287,7 +287,7 @@
    <tile gid="34"/>
    <tile gid="33"/>
    <tile gid="50"/>
-   <tile gid="49"/>
+   <tile gid="48"/>
    <tile gid="70"/>
    <tile gid="49"/>
    <tile gid="50"/>
@@ -307,7 +307,7 @@
    <tile gid="50"/>
    <tile gid="49"/>
    <tile gid="34"/>
-   <tile gid="33"/>
+   <tile gid="48"/>
    <tile gid="34"/>
    <tile gid="33"/>
    <tile gid="34"/>
@@ -327,7 +327,7 @@
    <tile gid="34"/>
    <tile gid="33"/>
    <tile gid="50"/>
-   <tile gid="49"/>
+   <tile gid="48"/>
    <tile gid="49"/>
    <tile gid="49"/>
    <tile gid="50"/>
