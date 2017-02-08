@@ -40,13 +40,15 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 	XMLElement* mapNode = doc.FirstChildElement("map");
 
 	//Get the width and the height of the whole map and store it in _size
-	int width, height;
+	int width = 0;
+	int height = 0;
 	mapNode->QueryIntAttribute("width", &width);
 	mapNode->QueryIntAttribute("height", &height);
 	this->_size = Vector2(width, height);
 
 	//Get the width and the height of the tiles and store it in _tileSize
-	int tileWidth, tileHeight;
+	int tileWidth = 0;
+	int tileHeight = 0;
 	mapNode->QueryIntAttribute("tilewidth", &tileWidth);
 	mapNode->QueryIntAttribute("tileheight", &tileHeight);
 	this->_tileSize = Vector2(tileWidth, tileHeight);
@@ -55,10 +57,10 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 	XMLElement* pTileset = mapNode->FirstChildElement("tileset");
 	if (pTileset != NULL) {
 		while (pTileset) {
-			int firstgid;
+			int firstgid = 0;
 			const char* source = pTileset->FirstChildElement("image")->Attribute("source");
 			char* path;
-			std::string testSS = " ";
+			std::string testSS ;
 			std::stringstream ss;
 			ss << source;
 			ss >> testSS;
@@ -114,7 +116,9 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 						while (pTile) {
 							//Build each individual tile here
 							//If gid is 0, no tile should be drawn. Continue loop
-							if (pTile->IntAttribute("gid") == 0) {
+							int gid = 0;
+							gid = pTile->IntAttribute("gid");
+							if (gid == 0) {
 								tileCounter++;
 								if (pTile->NextSiblingElement("tile")) {
 									pTile = pTile->NextSiblingElement("tile");
@@ -126,10 +130,10 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 							}
 
 							//Get the tileset for this specific gid
-							int gid = pTile->IntAttribute("gid");
+							//int gid = pTile->IntAttribute("gid");
 							Tileset tls;
 							int closest = 0;
-							for (int i = 0; i < this->_tilesets.size(); i++) {
+							for (int i = 0; i < (this->_tilesets.size()); i++) {
 								if (this->_tilesets[i].FirstGid <= gid) {
 									if (this->_tilesets[i].FirstGid > closest) {
 										closest = this->_tilesets[i].FirstGid;
@@ -156,12 +160,14 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 							xx = tileCounter % width;
 							xx *= tileWidth;
 							yy += tileHeight * (tileCounter / width);
-							std::cout << xx << "   " << yy << "   ";
+							//std::cout << tileCounter << " ";
+							//std::cout << xx << "   " << yy << "   ";
 							Vector2 finalTilePosition = Vector2(xx, yy);
+							tileCounter++;
 
 							//Calculate the position of the tile in the tileset
-							std::cout << gid << "  ";
-							Vector2 finalTilesetPosition = this->getTilesetPosition(tls, gid, tileWidth, tileHeight);
+							//std::cout << gid << "  ";
+							Vector2 finalTilesetPosition = this->getTilesetPosition(tls, gid , tileWidth, tileHeight);
 
 							//Build the actual tile and add it to the level's tile list
 							bool isAnimatedTile = false;
@@ -188,7 +194,7 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 									finalTilesetPosition, finalTilePosition);
 								this->_tileList.push_back(tile);
 							}
-							tileCounter++;
+							//tileCounter++;
 							pTile = pTile->NextSiblingElement("tile");
 						}
 					}
@@ -384,11 +390,16 @@ const Vector2 Level::getPlayerSpawnPoint() const {
 Vector2 Level::getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileHeight) {
 	int tilesetWidth, tilesetHeight;
 	SDL_QueryTexture(tls.Texture, NULL, NULL, &tilesetWidth, &tilesetHeight);
-	int tsxx = (gid - 1) % (tilesetWidth / tileWidth) ;
+	//std::cout << " " << tilesetWidth << " " << tilesetHeight;
+	int tsxx = 0;
+	std::cout << " gid:" << gid;
+	tsxx = (gid - tls.FirstGid) % (tilesetWidth / tileWidth) ;
+	std::cout << " tilesetWidth:" << tilesetWidth;
 	tsxx *= tileWidth;
 	int tsyy = 0;
 	int amt = ((gid - tls.FirstGid) / (tilesetWidth / tileWidth));
 	tsyy = tileHeight * amt;
+	std::cout << " tsxx:" << tsxx << " tsyy:" << tsyy << " ";
 	Vector2 finalTilesetPosition = Vector2(tsxx, tsyy);
 	return finalTilesetPosition;
 }
